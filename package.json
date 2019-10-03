@@ -1,0 +1,25 @@
+{
+  "name": "MMM-imhdsk",
+  "version": "0.0.1",
+  "description": "Display estimations for public transport stops in Bratislava, Slovakia.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adman/MMM-imhdsk.git"
+  },
+  "keywords": [
+    "MagicMirror",
+    "bus stop",
+    "tram stop",
+    "bratislava",
+    "public transport"
+  ],
+  "author": "Adrian Matejov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Adman/MMM-imhdsk/issues"
+  },
+  "homepage": "https://github.com/Adman/MMM-imhdsk",
+  "dependencies": {
+    "node-imhdsk": "^0.1.0"
+  }
+}

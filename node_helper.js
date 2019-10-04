@@ -1,5 +1,6 @@
 /* Magic Mirror
  * Module: MMM-imhdsk
+ * Description: Display estimations for public transport stops in Bratislava, Slovakia
  *
  * By Adrian Matejov https://github.com/Adman
  * MIT Licensed.

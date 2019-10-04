@@ -1,5 +1,6 @@
 /* Magic Mirror
  * Module: MMM-imhdsk
+ * Description: Display estimations for public transport stops in Bratislava, Slovakia
  *
  * By Adrian Matejov https://github.com/Adman
  * MIT Licensed.
@@ -21,6 +22,8 @@ Module.register('MMM-imhdsk', {
     getStyles: function() {
         return ['font-awesome.css', this.file('MMM-imhdsk.css')];
     },
+
+    // TODO: get header - if not user defined => "nearest lines from stop xy"
 
     start: function () {
         Log.log('Starting module: ' + this.name);
@@ -47,14 +50,30 @@ Module.register('MMM-imhdsk', {
             return wrapper;
         }
 
-        // TODO
+        var table = document.createElement('table');
+
+        if (false) {
+        
+        } else {
+            var row = document.createElement("tr");
+            table.appendChild(row);
+
+            var no_line_cell = document.createElement('td');
+            no_line_cell.className = 'dimmed light small';
+            no_line_cell.innerHTML = 'No lines at the moment';
+            row.appendChild(no_line_cell);
+        }
+
+        return table;
     },
 
     socketNotificationReceived: function(notification, payload) {
-        if (payload.module_id == this.identified) {
-            this.loaded = true;
-            this.data = payload.result;
-            this.updateDom();
+        if (notification === 'IMHDSK_UPDATE') {
+            if (payload.module_id == this.identifier) {
+                this.loaded = true;
+                this.data = payload.result;
+                this.updateDom();
+            }
         }
     }
 });

@@ -31,7 +31,7 @@ module.exports = NodeHelper.create({
             });
 
             setTimeout(function() {
-                self.getDataDataForStop(module_id, stop_id, refresh_interval);
+                self.getDataForStop(module_id, stop_id, refresh_interval);
             }, refresh_interval);
         });
     }

@@ -16,9 +16,9 @@ module.exports = NodeHelper.create({
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === 'IMHDSK_STOP_INIT') {
-            getDataForStop(payload.module_id,
-                           payload.stop_id,
-                           payload.refresh_interval);
+            this.getDataForStop(payload.module_id,
+                                payload.stop_id,
+                                payload.refresh_interval);
         }
     },
 

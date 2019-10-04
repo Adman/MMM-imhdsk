@@ -23,14 +23,15 @@ module.exports = NodeHelper.create({
     },
 
     getDataForStop: function(module_id, stop_id, refresh_interval) {
+        var self = this;
         imhdsk.get_livetable(stop_id).then(function(res) {
-            this.sendSocketNotification('IMHDSK_UPDATE', {
+            self.sendSocketNotification('IMHDSK_UPDATE', {
                 module_id: module_id,
                 result: res
             });
 
             setTimeout(function() {
-                this.getDataDataForStop(module_id, stop_id, refresh_interval);
+                self.getDataDataForStop(module_id, stop_id, refresh_interval);
             }, refresh_interval);
         });
     }

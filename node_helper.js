@@ -15,24 +15,19 @@ module.exports = NodeHelper.create({
     },
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'IMHDSK_STOP_INIT') {
+        if (notification === 'IMHDSK_STOP_INFO') {
             this.getDataForStop(payload.module_id,
-                                payload.stop_id,
-                                payload.refresh_interval);
+                                payload.stop_id);
         }
     },
 
-    getDataForStop: function(module_id, stop_id, refresh_interval) {
+    getDataForStop: function(module_id, stop_id) {
         var self = this;
         imhdsk.get_livetable(stop_id).then(function(res) {
             self.sendSocketNotification('IMHDSK_UPDATE', {
                 module_id: module_id,
                 result: res
             });
-
-            setTimeout(function() {
-                self.getDataForStop(module_id, stop_id, refresh_interval);
-            }, refresh_interval);
         });
     }
 });

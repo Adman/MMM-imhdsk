@@ -9,22 +9,21 @@
 Module.register('MMM-imhdsk', {
     defaults: {
         maximumEntries: 10,
-        dimAfterEntries: 6,
         refreshInterval: 30000, // in milliseconds
 
         displaySymbol: true,
         displayLineNumber: true,
         displayDestination: true,
 
-        fadePoint: 0.25, // start on the 1/4th of the list
+        fadePoint: 0.25, // Start on the 1/4th of the list
         fade: true,
-        blinkingUnder: 60, // start blinking, when arrive in less than x secs
+        blinkingUnder: 60, // Start blinking when the arrival is in less than x secs
 
         minimumTimeLeft: 0, // Display lines arriving at least in x seconds
 
         blacklistLines: [], // Lines that we do not want to show (strings)
 
-        onlyPlatforms: [], // process only specified platforms (ints)
+        onlyPlatforms: [], // Process only specified platforms (ints)
     },
 
     getStyles: function() {

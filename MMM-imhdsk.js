@@ -17,7 +17,7 @@ Module.register('MMM-imhdsk', {
 
         fadePoint: 0.25, // Start on the 1/4th of the list
         fade: true,
-        blinkingUnder: 60, // Start blinking when the arrival is in less than x secs
+        blinkingUnder: 60, // Start blinking, when arrive in less than x secs
 
         minimumTimeLeft: 0, // Display lines arriving at least in x seconds
 
@@ -36,8 +36,6 @@ Module.register('MMM-imhdsk', {
             sk: "translations/sk.json",
         }
     },
-
-    // TODO: get header - if not user defined => "nearest lines from stop xy"
 
     start: function () {
         Log.log('Starting module: ' + this.name);
@@ -71,7 +69,8 @@ Module.register('MMM-imhdsk', {
         var self = this;
         Object.keys(self.livetable).forEach(function(key) {
             var info = self.livetable[key];
-            if (self.config.onlyPlatforms.indexOf(info.platform) == -1)
+            if (self.config.onlyPlatforms.length > 0 &&
+                    self.config.onlyPlatforms.indexOf(info.platform) == -1)
                 return;
 
             info.lines.forEach(function(line) {
@@ -148,8 +147,9 @@ Module.register('MMM-imhdsk', {
                 w_time_td.innerHTML =  this.getDepartureTime(line);
                 row.appendChild(w_time_td);
 
+                row.className = 'bright'
                 if (line.leaving_in_secs < this.config.blinkingUnder)
-                    row.className = 'blinking';
+                    row.className += ' blinking';
 
                 table.appendChild(row);
             }

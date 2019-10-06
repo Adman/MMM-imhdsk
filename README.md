@@ -3,7 +3,7 @@
 This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) to display
 real time estimations for public transport stops in Bratislava, Slovakia.
 
-TODO: Screenshoot
+![screenshoot](img/screenshoot.png)
 
 ## Installation
 

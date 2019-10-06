@@ -1,3 +1,4 @@
 {
-    "NO_LINES": "No lines at the moment"
+    "IMHDSK_NO_LINES": "No lines at the moment",
+    "IMHDSK_FETCH_ERROR": "Failed to fetch data"
 }

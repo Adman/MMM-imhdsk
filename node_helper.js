@@ -28,6 +28,10 @@ module.exports = NodeHelper.create({
                 module_id: module_id,
                 result: res
             });
+        }).catch(function(err) {
+            self.sendSocketNotification('IMHDSK_FETCH_ERROR', {
+                module_id: module_id
+            });
         });
     }
 });

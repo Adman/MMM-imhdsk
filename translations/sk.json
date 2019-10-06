@@ -1,3 +1,4 @@
 {
-    "NO_LINES": "Aktuálne žiadne spoje"
+    "IMHDSK_NO_LINES": "Aktuálne žiadne spoje",
+    "IMHDSK_FETCH_ERROR": "Nepodarilo sa stiahnuť dáta"
 }

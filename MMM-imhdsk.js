@@ -49,6 +49,7 @@ Module.register('MMM-imhdsk', {
         }
 
         this.imhdsk_loaded = false;
+        this.imhdsk_fetch_error = false;
 
         this.scheduleUpdate();
         this.updateDom();
@@ -56,6 +57,12 @@ Module.register('MMM-imhdsk', {
 
     getDom: function() {
         var wrapper = document.createElement('div');
+
+        if (this.imhdsk_fetch_error) {
+            wrapper.innerHTML = this.translate('IMHDSK_FETCH_ERROR');
+            wrapper.className = 'dimmed light small';
+            return wrapper;
+        }
 
         if (!(this.imhdsk_loaded)) {
             wrapper.innerHTML = this.translate('LOADING');
@@ -159,7 +166,7 @@ Module.register('MMM-imhdsk', {
 
             var no_line_cell = document.createElement('td');
             no_line_cell.className = 'dimmed light small';
-            no_line_cell.innerHTML = this.translate('NO_LINES');
+            no_line_cell.innerHTML = this.translate('IMHDSK_NO_LINES');
             row.appendChild(no_line_cell);
         }
 
@@ -168,10 +175,14 @@ Module.register('MMM-imhdsk', {
     },
 
     socketNotificationReceived: function(notification, payload) {
-        if (notification === 'IMHDSK_UPDATE') {
-            if (payload.module_id == this.identifier) {
+        if (payload.module_id == this.identifier) {
+            if (notification === 'IMHDSK_UPDATE') {
                 this.imhdsk_loaded = true;
+                this.imhdsk_fetch_error = false;
                 this.livetable = payload.result;
+                this.updateDom();
+            } else if (notification === 'IMHDSK_FETCH_ERROR') {
+                this.imhdsk_fetch_error = true;
                 this.updateDom();
             }
         }

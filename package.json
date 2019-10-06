@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/Adman/MMM-imhdsk",
   "dependencies": {
-    "node-imhdsk": "^0.1.1"
+    "node-imhdsk": "^0.1.2"
   }
 }

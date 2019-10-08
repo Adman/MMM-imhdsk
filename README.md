@@ -36,8 +36,8 @@ var config = {
 | `maximumEntries`     | *Optional* The maximum entries shown. <br><br> **Type:** `int` <br> **Default value:** `10`
 | `refreshInterval`    | *Optional* How often to check for the next lines. <br><br> **Type:** `int`<br> **Default value:** `30000` milliseconds (30 seconds)
 | `minimumTimeLeft`    | *Optional* Show only lines departing at least in x seconds. <br><br> **Type:** `int`<br> **Default value:** `0` seconds (turned off)
-| `blacklistLines`     | *Optional* Do not display lines specified. <br><br> **Type:** `array of strings`<br> **Default value:** `[]`
-| `onlyPlatforms`      | *Optional* Display only lines from particular platforms. If left empty, the module shows everything. <br><br> **Type:** `array of ints`<br> **Default value:** `[]`
+| `ignoredLines`     | *Optional* Do not display lines specified. <br><br> **Type:** `array of strings`<br> **Default value:** `[]`
+| `onlyPlatforms`      | *Optional* Display only lines departing from specific platforms. If left empty, the module shows everything. <br><br> **Type:** `array of ints`<br> **Default value:** `[]`
 | `fade`               | *Optional* Fade the future lines to black. (Gradient) <br><br> **Type:** `boolean`<br> **Default value:** `true`
 | `fadePoint`          | *Optional* Where to start fade? <br><br> **Type:** `float`<br> **Default value:** `0.25` (start on the 1/4 th of the list)
 | `blinkingUnder`      | *Optional* Time for blinking alarm. Start blinking when the arrival is in less than x seconds. <br><br> **Type:** `int`<br> **Default value:** `60` seconds

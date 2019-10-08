@@ -21,7 +21,7 @@ Module.register('MMM-imhdsk', {
 
         minimumTimeLeft: 0, // Display lines arriving at least in x seconds
 
-        blacklistLines: [], // Lines that we do not want to show (strings)
+        ignoredLines: [], // Lines that we do not want to show (strings)
 
         onlyPlatforms: [], // Process only specified platforms (ints)
     },
@@ -84,7 +84,7 @@ Module.register('MMM-imhdsk', {
                 if (line.leaving_in_secs < self.config.minimumTimeLeft)
                     return;
 
-                if (self.config.blacklistLines.indexOf(line.line) > -1)
+                if (self.config.ignoredLines.indexOf(line.line) > -1)
                     return;
 
                 all_lines.push(line);

@@ -1,6 +1,6 @@
 {
   "name": "MMM-imhdsk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Display estimations for public transport stops in Bratislava, Slovakia.",
   "repository": {
     "type": "git",
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/Adman/MMM-imhdsk",
   "dependencies": {
-    "node-imhdsk": "^0.1.2"
+    "node-imhdsk": "^0.1.3"
   }
 }

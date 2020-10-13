@@ -28,11 +28,18 @@ var config = {
 }
 ```
 
+## Finding the stop ID
+
+If you want to use this module, you need to find the `ID` of the stop. Visit
+[imhd.sk](https://imhd.sk) and search for your favorite stop. Afterwards,
+a livetable of this stop should appear - open this livetable in new window.
+The url should contain parameter `st`, which is the stop's ID we are looking for.
+
 ## Configuration options
 
 | Option               | Description
 |--------------------- |------------
-| `stopId`             | *Required* Id of the stop (parameter "z" in stop's livetable url).<br><br> **Type:** `int` <br> **Default value:** `none`
+| `stopId`             | *Required* Id of the stop (parameter "st" in stop's livetable url).<br><br> **Type:** `int` <br> **Default value:** `none`
 | `maximumEntries`     | *Optional* The maximum entries shown. <br><br> **Type:** `int` <br> **Default value:** `10`
 | `refreshInterval`    | *Optional* How often to check for the next lines. <br><br> **Type:** `int`<br> **Default value:** `30000` milliseconds (30 seconds)
 | `minimumTimeLeft`    | *Optional* Show only lines departing at least in x seconds. <br><br> **Type:** `int`<br> **Default value:** `0` seconds (turned off)

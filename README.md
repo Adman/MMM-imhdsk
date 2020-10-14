@@ -20,7 +20,7 @@ var config = {
             header: '<name of the stop> stop',
             position: 'bottom_right',   // You can specify the region
             config: {
-                stopId: id, // Id of the stop (parameter "z" in stop's livetable url)
+                stopId: id, // Id of the stop (parameter "st" in stop's livetable url)
                 /* other configurations */
             }
         }

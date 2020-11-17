@@ -8,6 +8,8 @@ real time estimations for public transport stops in Bratislava, Slovakia.
 ## Installation
 
 Go to your MagicMirror's `modules` folder and execute `git clone https://github.com/Adman/MMM-imhdsk.git`.
+In order to install module dependendencies, move to the cloned module and
+run `npm install`.
 
 ## Using the module
 
